@@ -1,23 +1,22 @@
 # countsMQ4Targets
 Compute Average MQ0 Ratios and Generate Summary Report
-Introduction
+## Introduction
 This script calculates the average MQ0 ratios across multiple samples for specified genomic regions and generates a summary report. It utilizes bedtools and samtools to process BAM files, extract coverage information, and compute the average total depth, average MQ0 depth, and average ratio for each region. Finally, the script outputs a file containing aggregated information from all samples.
-Features
+## Features
 - Parse Sample ID File: Reads a list of sample IDs from a specified file.
 - Process BAM Files:
   - Uses bedtools coverage to calculate coverage for each sample in specified BED regions.
   - Filters out MQ0 (mapping quality 0) reads and computes their coverage.
 - Calculate Average Ratios: For each region, computes the average total depth, average MQ0 depth, and average ratio across all samples.
 - Generate Summary Report: Outputs a file containing the average depth, average ratio, and the number of samples exceeding ratios of 0.1, 0.2, and 0.3 for each region.
-Dependencies
+## Dependencies
 - Python 3.x
 - argparse module (usually installed with Python)
 - os and sys modules (built-in modules)
 - bedtools
 - samtools
-Usage
-Command Line Arguments
-bash
+## Usage
+bash```
 usage: scriptname.py [-h] -s SAMPLEIDS -b BAMDIR -e BEDFILE -o OUTPUTDIR
 Compute summary of average MQ0 ratios across samples.
 optional arguments:
@@ -25,7 +24,8 @@ optional arguments:
   -s, --sampleids   Path to sample IDs file
   -b, --bamdir      Base directory containing BAM files
   -e, --bedfile     Path to BED file
-  -o, --outputdir   Output directory for results
+  -o, --outputdir   Output directory for results 
+```  
 Example
 Assuming your sample ID file is sampleids.txt, BAM files are stored in /data/bams, the BED file is regions.bed, and you want to output the results to the results directory, you can run the following command:
 bash
